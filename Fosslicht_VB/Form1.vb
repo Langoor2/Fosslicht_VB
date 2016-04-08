@@ -23,5 +23,18 @@
 
         Me.BackColor = Color.Green
     End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+
+        If Me.BackColor = Color.LightSkyBlue Then
+            Me.BackColor = Color.Red
+        ElseIf Me.BackColor = Color.Red Then
+            Me.BackColor = Color.Green
+        ElseIf Me.BackColor = Color.Green Then
+            Me.BackColor = Color.Orange
+        ElseIf Me.BackColor = Color.Orange Then
+            Me.BackColor = Color.Red
+        End If
+    End Sub
 End Class
 
