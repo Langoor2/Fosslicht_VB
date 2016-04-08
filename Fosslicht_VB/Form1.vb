@@ -15,17 +15,17 @@
         Me.BackColor = Color.Green
     End Sub
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
-        Me.BackColor = Color.Green
-
-        Me.BackColor = Color.Orange
-
-        Me.BackColor = Color.Red
-
-        Me.BackColor = Color.Green
+        Do
+            Me.BackColor = Color.Green
+            Delay(4)
+            Me.BackColor = Color.Orange
+            Delay(2)
+            Me.BackColor = Color.Red
+            Delay(2)
+        Loop
     End Sub
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
-
         If Me.BackColor = Color.LightSkyBlue Then
             Me.BackColor = Color.Red
         ElseIf Me.BackColor = Color.Red Then
@@ -35,6 +35,17 @@
         ElseIf Me.BackColor = Color.Orange Then
             Me.BackColor = Color.Red
         End If
+    End Sub
+    Sub Delay(ByVal dblSecs As Double)
+
+        Const OneSec As Double = 1.0# / (1440.0# * 60.0#)
+        Dim dblWaitTil As Date
+        Now.AddSeconds(OneSec)
+        dblWaitTil = Now.AddSeconds(OneSec).AddSeconds(dblSecs)
+        Do Until Now > dblWaitTil
+            Application.DoEvents()
+        Loop
+
     End Sub
 End Class
 
